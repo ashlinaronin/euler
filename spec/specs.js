@@ -25,4 +25,8 @@ describe('2. fibonacci', function() {
     expect(sumEvenFib(10)).to.equal(44);
   });
 
+  it('sums the even terms in the fibonacci sequence where values are less than 200', function() {
+    expect(fibValuesLessThan(200)).to.equal(188);
+  });
+
 });
