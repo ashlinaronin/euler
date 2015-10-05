@@ -42,3 +42,16 @@ var sumFib = function(number) {
 
   return sum;
 }
+
+var sumEvenFib = function(number) {
+  var arrayResults = fibonacci(number);
+  var sum = 0;
+
+  for (var i = 0; i < arrayResults.length; i++) {
+    if (arrayResults[i] % 2 === 0) {
+      sum += arrayResults[i];
+    }
+  }
+
+  return sum;
+}

@@ -21,4 +21,8 @@ describe('2. fibonacci', function() {
     expect(sumFib(10)).to.equal(231);
   });
 
+  it('sums the even terms in the first 10 numbers of the fibonacci sequence', function() {
+    expect(sumEvenFib(10)).to.equal(44);
+  });
+
 });
