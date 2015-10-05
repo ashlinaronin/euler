@@ -47,8 +47,6 @@ var sumEvenFib = function(number) {
   var arrayResults = fibonacci(number);
   var sum = 0;
 
-  console.log("araryResults is " + arrayResults);
-
   for (var i = 0; i < arrayResults.length; i++) {
     if (arrayResults[i] % 2 === 0) {
       sum += arrayResults[i];
@@ -63,7 +61,6 @@ var fibValuesLessThan = function(number) {
   var sum = 0;
   var i = 0;
   var j = 1;
-
 
   // Do..while so it runs at least once. Before running again
   // the loop checks if the next number is less than 200.

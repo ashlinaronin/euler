@@ -29,4 +29,8 @@ describe('2. fibonacci', function() {
     expect(fibValuesLessThan(200)).to.equal(188);
   });
 
+  it('sums the even terms in the fibonacci sequence where values do not exceed 4,000,000', function() {
+    expect(fibValuesLessThan(4000000)).to.equal(4613732);
+  });
+
 });
