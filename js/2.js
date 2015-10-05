@@ -9,6 +9,7 @@
 
 var fibonacci = function(number) {
   var output = [];
+  var sum = 0;
 
   // Create two vars for keeping track of two adjacent fibonacci values.
   var i = 0;
@@ -18,6 +19,7 @@ var fibonacci = function(number) {
   while (output.length < number) {
     var thisFib = i + j;
     output.push(thisFib);
+    sum += thisFib;
 
     // On first iteration, we need to check if i is still 0
     // so that we don't reset j to 0 by accident.
@@ -30,5 +32,5 @@ var fibonacci = function(number) {
     // Need to update i value after j so that j can take i's old value first
     i = thisFib;
   }
-  return output;
+  return sum;
 }
