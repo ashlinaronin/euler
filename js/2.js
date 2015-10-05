@@ -8,5 +8,27 @@
 ** of the even-valued terms. */
 
 var fibonacci = function(number) {
+  var output = [];
 
+  // Create two vars for keeping track of two adjacent fibonacci values.
+  var i = 0;
+  var j = 1;
+
+  // Generate number amount of fibonacci numbers
+  while (output.length < number) {
+    var thisFib = i + j;
+    output.push(thisFib);
+
+    // On first iteration, we need to check if i is still 0
+    // so that we don't reset j to 0 by accident.
+    if (i === 0) {
+      j = 1;
+    } else {
+      j = i;
+    }
+
+    // Need to update i value after j so that j can take i's old value first
+    i = thisFib;
+  }
+  return output;
 }
