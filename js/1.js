@@ -3,14 +3,14 @@
 ** we get 3, 5, 6 and 9. The sum of these multiples is 23.
 ** Find the sum of all the multiples of 3 or 5 below 1000. */
 
-var multipleThreeFive = function(number) {
-  var multiples = [];
+var sumMultiples = function(number) {
+  var sum = 0;
   // Iterate through all numbers less than input
   for (var i = 1; i < number; i++) {
     if ((i % 3 === 0) || (i % 5 === 0)) {
-      multiples.push(i);
+      sum += i;
     }
   }
 
-  return multiples;
+  return sum;
 }
