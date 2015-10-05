@@ -13,8 +13,12 @@ describe('1. sumMultiples', function() {
 });
 
 describe('2. fibonacci', function() {
+  it('generates the first 10 terms in the fibonacci sequence', function() {
+    expect(fibonacci(10)).to.eql([1, 2, 3, 5, 8, 13, 21, 34, 55, 89]);
+  });
+
   it('sums the first 10 terms in the fibonacci sequence', function() {
-    expect(fibonacci(10)).to.equal(231);
+    expect(sumFib(10)).to.equal(231);
   });
 
 });

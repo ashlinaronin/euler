@@ -7,11 +7,9 @@
 ** whose values do not exceed four million, find the sum
 ** of the even-valued terms. */
 
+// Create two vars for keeping track of two adjacent fibonacci values.
 var fibonacci = function(number) {
   var output = [];
-  var sum = 0;
-
-  // Create two vars for keeping track of two adjacent fibonacci values.
   var i = 0;
   var j = 1;
 
@@ -19,7 +17,6 @@ var fibonacci = function(number) {
   while (output.length < number) {
     var thisFib = i + j;
     output.push(thisFib);
-    sum += thisFib;
 
     // On first iteration, we need to check if i is still 0
     // so that we don't reset j to 0 by accident.
@@ -32,5 +29,16 @@ var fibonacci = function(number) {
     // Need to update i value after j so that j can take i's old value first
     i = thisFib;
   }
+  return output;
+}
+
+var sumFib = function(number) {
+  var arrayResults = fibonacci(number);
+  var sum = 0;
+
+  for (var i = 0; i < arrayResults.length; i++) {
+    sum += arrayResults[i];
+  }
+
   return sum;
 }
