@@ -35,9 +35,9 @@ describe('2. fibonacci', function() {
 });
 
 describe('3. largest prime factor', function() {
-  it('finds the prime factors of 13195', function() {
-    expect(primeFactors(13195)).to.eql([5,7,13,29]);
-  });
+  // it('finds the prime factors of 13195', function() {
+  //   expect(primeFactors(13195)).to.eql([5,7,13,29]);
+  // });
 
   it('finds the largest prime factor of 13195', function() {
     expect(largestPrimeFactor(13195)).to.equal(29);

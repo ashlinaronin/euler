@@ -5,7 +5,7 @@
 ** What is the largest prime factor of the number 600851475143 ? */
 
 var primeFactors = function(number) {
-  // First, get all primes up to the given number
+  // Now try with all primes up to the given number
   var primesUpTo = primes(number);
   var primeFactors = [];
 
@@ -22,10 +22,10 @@ var primeFactors = function(number) {
 };
 
 
-var largestPrimeFactor = function(number) {
-  var factors = primeFactors(number);
-  return factors[factors.length-1];
-};
+// var largestPrimeFactor = function(number) {
+//   var factors = primeFactors(number);
+//   return factors[factors.length-1];
+// };
 
 
 
@@ -43,7 +43,6 @@ var numberList = function(number) {
 };
 
 var primes = function(number) {
-    var primes = [2];
     var allNumbers = numberList(number);
 
     // Loop through all primes that might have a multiple
@@ -53,9 +52,65 @@ var primes = function(number) {
         for (var indexToCheck = 0; indexToCheck < allNumbers.length; indexToCheck++) {
             if ((allNumbers[indexToCheck] % prime === 0) && (allNumbers[indexToCheck] !== prime)) {
                 allNumbers.splice(indexToCheck, 1);
+            } else {
+              // console.log(allNumbers[indexToCheck] + " is prime");
             }
         }
     }
 
+    console.log(allNumbers);
     return allNumbers;
+}
+
+
+var largestPrimeFactor = function(number) {
+    var allNumbers = numberList(number);
+
+    // Loop through all primes that might have a multiple
+
+    // now go from top down
+    // for (var i = number; i >= (number/2); i--) {
+    //   // console.log("i is " + i);
+    //   for (var indexToCheck = 0; i < allNumbers.length; indexToCheck++) {
+    //     if ((allNumbers[indexToCheck] % i !== 0) && (allNumbers[indexToCheck] === i)) {
+    //       console.log('allNumbers[' + indexToCheck + ']=' + allNumbers[indexToCheck]);
+    //       return allNumbers[indexToCheck];
+    //     }
+    //   }
+    // }
+
+
+    for(var prime = number; prime >= 2; prime--) {
+      // console.log("prime for index is " + prime);
+
+        // Remove all multiples of this prime from the number list
+        for (var indexToCheck = allNumbers.length-1; indexToCheck >= 0; indexToCheck--) {
+          // console.log('indexTocheck is ' + indexToCheck);
+
+            // // if this number is divisible
+            // if ((allNumbers[indexToCheck] % prime !== 0) && (number % allNumbers[indexToCheck] === 0)) {
+            //   console.log("prime factor: " + allNumbers[indexToCheck]);
+            //   return allNumbers[indexToCheck];
+            // }
+
+            if ((allNumbers[indexToCheck] % prime === 0) && (allNumbers[indexToCheck] !== prime)) {
+                // allNumbers.splice(indexToCheck, 1);
+                // do nothing
+                // console.log('')
+            } else {
+              // we've gotten to the biggest prime, check if it's a factor
+              if (number % allNumbers[indexToCheck] === 0) {
+                console.log("prime factor: " + allNumbers[indexToCheck]);
+                //
+                return allNumbers[indexToCheck];
+              }
+
+
+            }
+        }
+    }
+
+    // return -1;
+    // console.log(allNumbers);
+    return -1;
 }
