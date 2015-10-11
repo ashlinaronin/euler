@@ -32,5 +32,12 @@ describe('2. fibonacci', function() {
   it('sums the even terms in the fibonacci sequence where values do not exceed 4,000,000', function() {
     expect(fibValuesLessThan(4000000)).to.equal(4613732);
   });
+});
 
+describe('3. largest prime factor', function() {
+  it('finds the prime factors of 13195', function() {
+    expect(largestPrimeFactor(13195)).to.eql([5,7,13,29]);
+  });
+
+  
 });
